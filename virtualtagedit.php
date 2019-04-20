@@ -15,7 +15,7 @@ echo '<html><body><form action="index.php?tagid='.$tagid.'" method="post">edit s
 $file = fopen("tags.json","a+") or die ("file not found"); 
 $json = file_get_contents('tags.json'); $data = json_decode($json, true); 
 @$output = $data["$tagid"];
- echo '<html><body><form action="index.php?tagid='.$tagid.'" method="post">edit scanned tag\'s value<input type="text" name="tagvalue" value="'.$output.'"><br><input type="submit"></form></body></html>'; 
+ echo '<html><body><form action="index.php?tagid='.$tagid.'" method="post">edit scanned tag\'s value<input type="text" name="tagvalue" value="'.$output.'"><br><input type="submit"></form><button><a href = "main.php">go to main page</a></button> </body></html>'; 
 fclose($file); 
 } 
 ?>
