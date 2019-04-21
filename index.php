@@ -32,7 +32,7 @@ unlink($myFile) or die ("error: cannot delete spreadsheet");
 echo "spreadsheet reset";
  } 
 } 
-else if(!isset($_COOKIE[$cookie_name])) {
+else {
  if (!isset($_GET['tag'])) { 
 exit("no tag left");
  } 
@@ -46,9 +46,5 @@ fclose($file);
 echo "<html><style>body { font-size: 300%; font-family: Arial;}button { text-decoration: none; text-align: center; font-size: 100%; margin: 50px; background-color: navy; color: white; border-radius: 12px; } a { text-decoration: none; color: white;} </style><body> <h1> Tag recorded</h1></body></html>"; 
 echo $tag; 
 } 
-else if (isset($_COOKIE[$cookie_name])) { 
-echo "frozen for 1 day"; 
-//recording frozen
-}
 }
 ?>
