@@ -17,8 +17,7 @@ $grade = $piece[2];
 if (!file_exists($studentfile.csv)) {
 $file = fopen("$studentfile.csv","a");
  $stamp = date("m-d-y h:i:s"); 
-$feed = ("TIMESTAMP" .",". "," .  "SKILL" . ",". "GRADE" . PHP_EOL); file_put_contents("$studentfile.csv", 
-$feed, FILE_APPEND); 
+$feed = ("TIMESTAMP" .",". "," .  "SKILL" . ",". "GRADE" . PHP_EOL); file_put_contents("$studentfile.csv", $feed, FILE_APPEND); 
 fclose($file); 
 }
  if ($adminlogin == 'password123') { 
@@ -33,8 +32,7 @@ exit("no tag left");
 else {
  $file = fopen("$studentfile.csv","a");
  $stamp = date("m-d-y h:i:s"); 
-$feed = ($stamp .",". "," .  $skill . ",". $grade . PHP_EOL); file_put_contents("$studentfile.csv", 
-$feed, FILE_APPEND); 
+$feed = ($stamp .",". "," .  $skill . ",". $grade . PHP_EOL); file_put_contents("$studentfile.csv", $feed, FILE_APPEND); 
 fclose($file); 
 echo "<html><style>body { font-size: 300%; font-family: Arial;}button { text-decoration: none; text-align: center; font-size: 100%; margin: 50px; background-color: navy; color: white; border-radius: 12px; } a { text-decoration: none; color: white;} </style><body> <h1> Tag recorded</h1></body></html>"; 
 echo $tag; 
