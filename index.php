@@ -7,7 +7,12 @@ date_default_timezone_set("UTC");
 $tag = urldecode($_GET["tag"]); 
 $adminlogin = urldecode($_GET["adminlogin"]);
 //$tagval = "id+skill+statusorgrade";
-$tagval = $tag;
+
+$file = fopen("tags.json","a+") or die ("file not found"); 
+$json = file_get_contents('tags.json'); $data = json_decode($json, true); 
+@$tagval = $data["$tag"];
+fclose($file); 
+
 $piece = explode('+',$tagval);
 $studentfile = $piece[0];
 $skill = $piece[1];
