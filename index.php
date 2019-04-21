@@ -22,7 +22,7 @@ $feed, FILE_APPEND);
 fclose($file); 
 }
  if ($adminlogin == 'password123') { 
-echo "<html><style>body { Font-size: 300%; Font-family: Arial; text-decoration: none; } button { text-decoration: none; text-align: center; font-size: 100%; margin: 50px; background-color: navy; color: white; border-radius: 12px; } a { text-decoration: none; color: white;}</style><body> <h1><button><a href = \"$studentfile.csv\"> Download responses</a></button><button><a href=\"?delete=1&adminlogin=password123&tag=no\">delete data</a> </button></h1></body></html>";
+echo "<html><style>body { Font-size: 300%; Font-family: Arial; text-decoration: none; } button { text-decoration: none; text-align: center; font-size: 100%; margin: 50px; background-color: navy; color: white; border-radius: 12px; } a { text-decoration: none; color: white;}</style><body> <h1><button><a href = \"$studentfile.csv\"> Download responses</a></button><button><a href=\"?delete=1&adminlogin=password123&tag=no\">delete data</a> </button></h1><button><a href=\"tagedit.php\">Switch Student Reprogram Tag</a></button></body></html>";
  if (isset($_GET['delete'])) { $myFile="$studentfile.csv";  
 unlink($myFile) or die ("error: cannot delete spreadsheet"); 
 echo "spreadsheet reset";
