@@ -5,7 +5,7 @@ $tagid = urldecode($_GET["tag"]);
 if(isset($_POST["submit"])) { 
 //$tagvalue = $_POST["tagvalue"];
 $idfilename = $_POST["id"];
-$studentid =  "wydhegkvd268evk742rhj3e" .$idfilename;
+$studentid =  "wydhegkvd268evk742rhj3e#" .$idfilename;
 $skill = $_POST["skill"];
 $status = $_POST["status"];
 $file = fopen("tags.json","a+") or die ("file not found"); 

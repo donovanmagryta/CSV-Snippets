@@ -14,6 +14,10 @@ $piece = explode('+',$tagval);
 @$studentfile = $piece[0];
 @$skill = $piece[1];
 @$grade = $piece[2];
+
+$act = explode( '#', $studentfile);
+@$actname = $act[1];
+$download = $actname .'.csv';
 $sheet = $studentfile.'.csv';
 if (!file_exists($sheet)) {
 $file = fopen($sheet,"a");
@@ -23,7 +27,7 @@ file_put_contents($sheet, $feed, FILE_APPEND);
 fclose($file);
 }
  if ($adminlogin == 'password123') {
-   echo "<html><style>body { Font-size: 300%; Font-family: Arial; text-decoration: none; } button { text-decoration: none; text-align: center; font-size: 100%; margin: 50px; background-color: navy; color: white; border-radius: 12px; } a { text-decoration: none; color: white;}</style><body> <h1><button><a href = \"$sheet\"> Download responses</a></button><button><a href=\"?delete=1&adminlogin=password123\">delete data</a> </button></h1><button><a href=\"tagedit.php?tag='.$tag.'\">Switch Student Reprogram Tag</a></button></body></html>";
+   echo "<html><style>body { Font-size: 300%; Font-family: Arial; text-decoration: none; } button { text-decoration: none; text-align: center; font-size: 100%; margin: 50px; background-color: navy; color: white; border-radius: 12px; } a { text-decoration: none; color: white;}</style><body> <h1><button><a href = \"$sheet\" download=\"$download\"> Download responses</a></button><button><a href=\"?delete=1&adminlogin=password123\">delete data</a> </button></h1><button><a href=\"tagedit.php?tag='.$tag.'\">Switch Student Reprogram Tag</a></button></body></html>";
  } 
  if (isset($_GET['delete'])) {
    $myFile= $sheet;
@@ -41,7 +45,11 @@ file_put_contents($sheet, $feed, FILE_APPEND);
 fclose($file);
 echo "<html><style>body { font-size: 300%; font-family: Arial;}button { text-decoration: none; text-align: center; font-size: 100%; margin: 50px; background-color: navy; color: white; border-radius: 12px; } a { text-decoration: none; color: white;} </style><body> <h1> Tag recorded</h1></body></html>";
 echo $tag;
+echo "<br>";
+echo $actname;
+echo "<br>";
 echo $skill;
+echo "<br>";
 echo $grade;
 }
 ?>
